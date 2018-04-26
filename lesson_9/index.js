@@ -1,2 +1,2 @@
-var name "Darya Lobanova";
-console.log('Darya Lobanova');
+var name = "Darya Lobanova";
+console.log(name);
