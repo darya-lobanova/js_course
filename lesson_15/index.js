@@ -1,33 +1,35 @@
-function init(arr1, n){
-		let keyAtribute  = "";
-		let nameAtribute = "";
-		let attr = arr1.attributes;
-		for (let key in attr) {
-			keyAtribute = key;
-			nameAtribute = attr[key];
-		}
-
- 	let ul = document.createElement("ul");
-	let li ="";
- 	document.body.insertBefore(ul, document.body.firstChild);
-	for (let i = 0; i < n ; i++) {
-		li = document.createElement("li");
-	    li.className = arr1.className;
-	    li.setAttribute(keyAtribute, nameAtribute);
-	    li.innerHTML = arr1.content;
-	    ul.appendChild(li);
-	}
+function init(arr, n) {
+	const ul = document.createElement('ul');
+  
+  for (let i = 0; i < arr.length; i += 1) {
+  	const el = arr[i];
+    
+    for (let j = 0; j < n; j += 1) {
+    		const li = document.createElement('li');
+        li.className = el.className;
+        const keys = Object.keys(el.attributes);
+        
+        for (let l = 0; l < keys.length; l += 1) {
+        	const key = keys[l];
+          li.setAttribute(key, el.attributes[key]);
+        }
+        li.appendChild(document.createTextNode(el.content));
+        ul.appendChild(li);
+    }
+  }
+  
+  document.body.appendChild(ul);
 }
 
-document.querySelector('button').addEventListener("click", listen);
-
- function listen() {
-	let element = document.querySelector('ul');
-	if(element){
-		element.parentNode.removeChild(element);
-		return true;
-	}
-	else{
-		return false;
-	}
+function listen() {
+	const b = document.getElementsByTagName('button')[0];
+  b.addEventListener('click', function () {
+  	const ul = document.querySelector('ul');
+    
+    if (ul) {
+    	document.body.removeChild(ul); 
+      return true;
+    }
+    return false;
+  });
 }
