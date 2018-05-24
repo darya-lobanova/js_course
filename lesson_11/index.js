@@ -1,38 +1,28 @@
-﻿ let a = 2;
- let b = 8;
+﻿ let a = 5;
+ let b = 3;
  let operation = "pow";
-  let res;
 
- switch (operation) {
-     
-	case "add":
-    		res = a + b;
-		console.log(res);
-	break;
-	case "sub":
-      		res = a - b;
-		console.log(res);
+switch (operation) {
+	case "add": 
+		console.log(a + b);
 		break;
 
- 	case "mult":
-      		res = a * b;
-		console.log(res);
+	case "sub": 
+		console.log(a - b);
 		break;
 
-	case "div":
-	 if (b !== 0) {
-      			res = a / b;
-			console.log(res);
- 		} 
-		else {
-			console.log("can not be divided by zero");
-		}
-	break;
-
-	case "pow":
-     		res = Math.pow(a, b);
-		console.log(res);
+	case "mult": 
+		console.log(a * b);
 		break;
+
+	case "div": 
+		console.log(a / b);
+		break;
+
+	case "pow": 
+		console.log(Math.pow(a,b));
+		break;
+
 	default:
- 	console.log( "Please enter correct data" )
+ 		console.log( "Please enter correct data" )
  }
