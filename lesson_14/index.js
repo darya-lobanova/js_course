@@ -35,13 +35,10 @@ function revers(rev) {
 }
 
 
-
-function splitArray(arr, c) {
-	
-		let newarr = [];
-
-		while(arr.length) {
-	    newarr.push(arr.splice(0, c));
-	}
-		return newarr;
+function splitArray(arr, count) {
+	 const result = [];
+	 for (let i = 0; i < arr.length; i += count) {
+	   result.push(arr.slice(i, i + count));
+	 }
+	 return result;
 }
