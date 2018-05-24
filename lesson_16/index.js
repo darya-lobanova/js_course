@@ -31,7 +31,7 @@ second.appendChild(document.createTextNode(num));
 seconds.appendChild(document.createTextNode('s'));
 
 function count () {
-	let interval = setInterval(function() {
+	 interval = setInterval(function() {
 		num += 1;
 		second.innerHTML = num;
 		if (num === 1) {
@@ -59,24 +59,23 @@ function count () {
 	start.setAttribute('disabled', 'true');
 
 	stop.addEventListener('click', function(){
-		counter = 0;
 		clearInterval(interval);
-		second.innerHTML = 0;		
-		start.removeAttribute('disabled');
-		second.innerHTML = 0;
+		counter = 0;
 		num = 0;
+		second.innerHTML = 0;		
 		let numb = numbers.children;
 		for (let i = 1; i < numb.length - 1; i++ ) {
-			numb[i].style.backgroundColor = 'white';
+			numb[i].style.backgroundColor = '';
 		}
-		letS.innerHTML = 's';
-		startB.removeAttribute('disabled');
+		seconds.innerHTML = 's';
+		start.removeAttribute('disabled');
 		check = false;
 	})
 
 	pause.addEventListener('click', function() {
 		clearInterval(interval);
 		start.removeAttribute('disabled');
+		check === true;
 	})
 }
 start.addEventListener('click', count);
@@ -97,3 +96,4 @@ x3.addEventListener('click', function(){
 	clearInterval(interval);
 	if (num > 0 && check === false) count();
 })
+
