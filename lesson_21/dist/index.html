@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Lesson 21</title>
+    <style type="text/css">
+    @keyframes spin {
+        to { transform: rotate(1turn); }
+    }
+    #preloader {
+        position: relative;
+        display: none;
+        width: 5em;
+        height: 5em;
+        margin: 10px;
+        font-size: 8px;
+        text-indent: 999em;
+        overflow: hidden;
+        animation: spin 1s infinite steps(8);
+    }
+    #preloader:before,
+    #preloader:after,
+    #preloader > div:before,
+    #preloader > div:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 2.25em;
+        width: .5em;
+        height: 1.5em;
+        border-radius: .2em;
+        background: #eee;
+        box-shadow: 0 3.5em #eee;
+        transform-origin: 50% 2.5em;
+    }
+    #preloader:before {
+        background: #555;
+    }
+    #preloader:after {
+        transform: rotate(-45deg);
+        background: #777;
+    }
+    #preloader > div:before {
+        transform: rotate(-90deg);
+        background: #999;
+    }
+    #preloader > div:after {
+        transform: rotate(-135deg);
+        background: #bbb;
+    }
+</style>
+</head>
+<body>
+    <div id="preloader"><div></div></div>
+    <label for="inp1">Latitude</label>
+    <input id="inp1" type="number" value="0">
+    <label for="inp2">Longitude</label>
+    <input id="inp2" type="number" value="0">
+    <br>
+    <button id="btn">Take data</button>
+	<script type="text/javascript" src="/lesson_21.5871b0c4.js"></script>
+</body>
+</html>
