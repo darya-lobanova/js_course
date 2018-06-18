@@ -22,7 +22,7 @@ let nlist = document.getElementById('my_list');
 
 nlist.onclick = function(event) {
     
-    let target = event.target; // где был клик?
+    let target = event.target;
     
     if (target.tagName !== 'Li'){
         target.setAttribute('class', 'done');
